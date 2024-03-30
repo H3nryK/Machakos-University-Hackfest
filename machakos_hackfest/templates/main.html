@@ -1,0 +1,143 @@
+{% load static %}
+
+{% extends "base.html" %}
+
+{% block title %}Mksu Hackfest 2024{% endblock title %}
+
+{% block content %}
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="{% static "Machakos_University_Logo.png" %}" alt="Hackfest Logo" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "main" %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#schedule">Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sponsors">Sponsors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "register" %}">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 class="animate__animated animate__fadeInDown">MksU Hackfest 2024</h1>
+        <div id="countdown" class="animate__animated animate__fadeInUp">
+          <div class="countdown-item">
+            <span class="countdown-value" id="days"></span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="hours"></span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="minutes"></span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" id="seconds"></span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+        <a href="{% url "register" %}" class="btn btn-primary animate__animated animate__pulse">Register Now</a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+          <h2>About Hackfest</h2>
+          <p>Hackfest is a 48-hour coding marathon where developers, designers, and tech enthusiasts come together to create innovative projects. Participants will have the opportunity to collaborate, learn, and showcase their skills in a dynamic and supportive environment.</p>
+          <p>This year's Hackfest promises to be bigger and better than ever, with exciting challenges, inspiring workshops, and valuable networking opportunities. Whether you're a seasoned developer or just starting out, Hackfest provides a platform to push your limits, explore new technologies, and connect with like-minded individuals.</p>
+          <p>Get ready to unleash your creativity, collaborate with talented individuals, and unlock your full potential at Hackfest 2024!</p>
+        </div>
+    </section>
+
+    <section class="schedule" id="schedule">
+      <div class="container">
+        <h2>Schedule</h2>
+        <div class="timetable">
+          <div class="timetable-header">
+            <div class="timetable-col">Time</div>
+          </div>
+          <div class="timetable-row animate__animated animate__fadeInUp">
+            <div class="timetable-col">9:00 AM</div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-user-plus"></i> Registration</h4>
+              <p>Get your badges and swag!</p>
+            </div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-utensils"></i> Breakfast</h4>
+              <p>Fuel up for the day.</p>
+            </div>
+          </div>
+          <div class="timetable-row animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="timetable-col">10:00 AM</div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-bullhorn"></i> Opening Ceremony</h4>
+              <p>Welcome and kickoff.</p>
+            </div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-code"></i> Hacking Resumes</h4>
+              <p>Back to coding!</p>
+            </div>
+          </div>
+          <div class="timetable-row animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="timetable-col">11:00 AM</div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-laptop-code"></i> Hacking Begins</h4>
+              <p>Start building your projects.</p>
+            </div>
+          </div>
+          <div class="timetable-row animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="timetable-col">1:00 PM</div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-hamburger"></i> Lunch Break</h4>
+              <p>Take a break and refuel.</p>
+            </div>
+            <div class="timetable-col timetable-event">
+              <h4><i class="fas fa-hamburger"></i> Lunch Break</h4>
+              <p>Take a break and refuel.</p>
+            </div>
+          </div>
+          <!-- Add more timetable rows here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsors" id="sponsors">
+      <div class="container">
+        <h2>Sponsors</h2>
+        <div class="sponsor-logos">
+          <img src='{% static "img/aws.png" %}' alt="Sponsor 1" class="animate__animated animate__fadeInUp">
+          <img src='{% static "img/Machakos_University_Logo.png" %}' alt="Sponsor 2" class="animate__animated animate__fadeInUp animate__delay-1s">
+          <img src="{% static "img/oracle.png" %}" alt="Sponsor 3" class="animate__animated animate__fadeInUp animate__delay-2s">
+          <img src="{% static "img/echo.webp" %}" alt="Sponsor 4" class="animate__animated animate__fadeInUp animate__delay-3s">
+          <img src="{% static "img/gdsc.png" %}" alt="Sponsor 5" class="animate__animated animate__fadeInUp animate__delay-4s">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+{% endblock content %}
