@@ -4,7 +4,7 @@ from .utils import generate_qr_code
 from django.urls import reverse
 from django.template.loader import render_to_string
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 
 def register(request):
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def register(request):
 
             qr_code_url = request.build_absolute_uri(reverse('scan_qr', kwargs={'ticket_id': ticket_id}))
 
-            email_content = render_to_string('registration_email.html', { 
+            email_content = render_to_string('email.html', { 
                 'name': participant.name,
                 'email': participant.email,
                 'team': participant.team,
@@ -45,17 +45,25 @@ def register(request):
                 'ref_code': participant.ref_code
             })
 
-            send_mail(
-                'Registration Details',
-                email_content,
-                settings.DEFAULT_FROM_EMAIL,
-                [ticket.email],
-                fail_silently=False,
-            )
+            try:
+                email = EmailMessage(
+                    'Registration Details',
+                    email_content,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [participant.email]
+                )
+                email.content_subtype = 'html'
+                email.send()
+            except Exception as e:
+                print(f"Error sending email: {e}")
 
-            return redirect(reverse('ticket', kwargs={'ticket_id': ticket_id}))
+            return redirect(reverse('success', kwargs={'ticket_id': ticket_id}))
     
     return render(request, 'register.html')
+
+def success(request, ticket_id):
+    ticket = get_object_or_404(Ticket, ticket_id=ticket_id)
+    return render(request, 'success.html', {'ticket': ticket})
 
 def scan_qr(request, ticket_id):
     ticket = get_object_or_404(Ticket, ticket_id=ticket_id)

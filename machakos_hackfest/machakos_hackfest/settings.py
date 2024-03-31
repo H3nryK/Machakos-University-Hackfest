@@ -133,13 +133,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'henkimani90@gmail.com'  # Your Gmail email address
-EMAIL_HOST_PASSWORD = '1764@Happy'     # Your Gmail password or App password if using 2-factor authentication
+EMAIL_HOST_USER = ''  # Your Gmail email address
+EMAIL_HOST_PASSWORD = ''     # Your Gmail password or App password if using 2-factor authentication
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 # Default email address to use for various automated correspondence from the site.
-DEFAULT_FROM_EMAIL = 'henkimani90@gmail.com'  # Your Gmail email address
+DEFAULT_FROM_EMAIL = ''  # Your Gmail email address
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

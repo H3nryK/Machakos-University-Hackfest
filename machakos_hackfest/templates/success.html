@@ -1,0 +1,26 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Success</title>
+</head>
+<body>
+    <h1>Registration Successful!</h1>
+    <p>Your ticket details:</p>
+    <p><strong>Name:</strong> {{ ticket.participant.name }}</p>
+    <p><strong>Email:</strong> {{ ticket.participant.email }}</p>
+    <p><strong>Team:</strong> {{ ticket.participant.team }}</p>
+    <p><strong>Course:</strong> {{ ticket.participant.course }}</p>
+    <p><strong>School:</strong> {{ ticket.participant.school }}</p>
+    <p><strong>Languages:</strong> {{ ticket.participant.language }}</p>
+    <p><strong>Year of Study:</strong> {{ ticket.participant.year }}</p>
+    <p><strong>Ticket ID:</strong> {{ ticket.ticket_id }}</p>
+
+    <img src="/media/qrcodes/{{ ticket.ticket_id }}.png" alt="QR Code for Ticket">
+
+    <p>A copy of your ticket has been sent to your registered email: {{ ticket.participant.email }}</p>
+</body>
+</html>
