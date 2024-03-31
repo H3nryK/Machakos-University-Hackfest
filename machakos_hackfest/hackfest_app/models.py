@@ -24,6 +24,14 @@ class Participant(models.Model):
             hash_str = hashlib.sha256(str(random_uuid).encode('utf-8')).hexdigest()[:5]
             self.ref_code = f"MksU{hash_str}"
         super().save(*args, **kwargs)
+
+class Ticket(models.Model):
+    participant = models.ForeignKey(Participant, on_delete= models.CASCADE)
+    ticket_id = models.PositiveIntegerField(unique=True)
+    used = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Ticket ID: {self.ticket_id} - Participant: {self.participant.name}"
     
 class CommunityPost(models.Model):
     name = models.CharField(max_length=255, null=True)
@@ -31,11 +39,3 @@ class CommunityPost(models.Model):
 
     def __str__(self):
         return self.name
-    
-class Ticket(models.Model):
-    user = models.ForeignKey(Participant)
-    ref_code = models.UUIDField()
-    qrcode = models.ImageField(upload_to='/media/')
-
-    def __str__(self):
-        return f"{self.user} {self.ref_code}"

@@ -16,7 +16,7 @@ def register(request):
         user_team = request.POST.get('team')
         user_course = request.POST.get('course')
 
-        ticket, created = Ticket.objects.get_or_create(
+        participant, created = Participant.objects.get_or_create(
             name = user_name,
             email = user_email,
             team = user_team,
@@ -26,34 +26,48 @@ def register(request):
             year = user_year
         )
 
-        qr_code_url = request.build_absolute_uri(reverse('ticket', kwargs={'ticket_id': ticket.id}))
-
-        email_content = render_to_string('registration_email.html', { 
-            'name' : ticket.name,
-            'email': ticket.email,
-            'team' : ticket.team,
-            "course" : ticket.course,
-            "school" : ticket.school,
-            "language" : ticket.language,
-            "year" :ticket.year,
-            'qr_code_url': qr_code_url,
-            'ref_code': ticket.ref_code
-        })
-
-        send_mail(
-            'Registration Details',
-            email_content,
-            settings.DEFAULT_FROM_EMAIL,
-            [ticket.email],
-            fail_silently=False,
-        )
-
         if created:
-            return redirect(reverse('ticket', kwargs={'ticket_id': ticket.id}))
-        else:
-            return redirect(reverse('register'))
+            ticket_id = uuid.uuid4().int & (1 << 31) - 1  # Generating a unique ticket ID
+            ticket = Ticket.objects.create(participant=participant, ticket_id=ticket_id)
+            generate_qr_code(ticket_id)
+
+            qr_code_url = request.build_absolute_uri(reverse('scan_qr', kwargs={'ticket_id': ticket_id}))
+
+            email_content = render_to_string('registration_email.html', { 
+                'name': participant.name,
+                'email': participant.email,
+                'team': participant.team,
+                "course": participant.course,
+                "school": participant.school,
+                "language": participant.language,
+                "year": participant.year,
+                'qr_code_url': qr_code_url,
+                'ref_code': participant.ref_code
+            })
+
+            send_mail(
+                'Registration Details',
+                email_content,
+                settings.DEFAULT_FROM_EMAIL,
+                [ticket.email],
+                fail_silently=False,
+            )
+
+            return redirect(reverse('ticket', kwargs={'ticket_id': ticket_id}))
     
-    return render(request, 'regiser.html')
+    return render(request, 'register.html')
+
+def scan_qr(request, ticket_id):
+    ticket = get_object_or_404(Ticket, ticket_id=ticket_id)
+    if not ticket.used:
+        ticket.used = True
+        ticket.save()
+        return render(request, 'success.html', {'participant': ticket.participant})
+    else:
+        return render(request, 'already_scanned.html')
+
+def superuser_check(user):
+    return user.is_superuser
 
 def generate_ticket(request, ticket_id):
     ticket = get_object_or_404(Ticket, id=ticket_id)

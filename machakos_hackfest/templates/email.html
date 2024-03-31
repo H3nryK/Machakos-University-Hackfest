@@ -1,20 +1,34 @@
-Greating {{ name }},
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Details</title>
+</head>
+<body>
+    <p>Greeting {{ name }},</p>
 
-We are thrilled to have you for our event.
-The following are your details for your pass:
+    <p>We are thrilled to have you for our event. The following are your details for your pass:</p>
 
-===================================
-Name: {{ name }}
-Identity: {{ ref_code }}
+    <hr>
 
-Email: {{ email }}
-Team: {{ wazito }}
-Course: {{ course }}
-School: {{ school }}
-Languages: {{ language}}
-Year of Study: {{ year }}
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Identity:</strong> {{ ref_code }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Team:</strong> {{ team }}</p>
+    <p><strong>Course:</strong> {{ course }}</p>
+    <p><strong>School:</strong> {{ school }}</p>
+    <p><strong>Languages:</strong> {{ language }}</p>
+    <p><strong>Year of Study:</strong> {{ year }}</p>
 
-====================================
+    <hr>
 
-Warm Regards,
-Mksu Hackfest Team
+    <p>Below is the QR code for your ticket:</p>
+    <img src="{{ qr_code_url }}" alt="QR Code for Ticket">
+
+    <hr>
+
+    <p>Warm Regards,<br>Mksu Hackfest Team</p>
+</body>
+</html>

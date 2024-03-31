@@ -1,6 +1,6 @@
-{% load static %}
-
 {% extends "base.html" %}
+
+{% load static %}
 
 {% block title %} Register || Mksu Hackfest 2024 {% endblock title %}
 
@@ -32,7 +32,7 @@
 <section class="register" id="register">
     <div class="container">
       <h2>Register Now</h2>
-      <form action='{% url "homepage" %}' method='post'>
+      <form action='{% url "register" %}' method='post'>
         {% csrf_token %}
         <div class="form-group">
           <label for="name">Name <i class="fas fa-user"></i></label>

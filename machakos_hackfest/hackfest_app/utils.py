@@ -2,7 +2,6 @@ import qrcode
 import os
 
 def generate_qr_code(ticket_id):
-    # Create QRCode object
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -11,7 +10,7 @@ def generate_qr_code(ticket_id):
     )
 
     # Add data to QRCode
-    qr.add_data(f'http://127.0.0.1:8000/ticket/{ticket_id}')
+    qr.add_data(f'http://127.0.0.1:8000/scan/{ticket_id}')
     qr.make(fit=True)
 
     # Generate QR code image
