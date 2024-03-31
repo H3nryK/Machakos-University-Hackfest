@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
+from django.contrib.auth.decorators import login_required
 from .utils import generate_qr_code
 from django.urls import reverse
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.core.mail import EmailMessage
+from django.contrib import messages
 
 def register(request):
     if request.method == 'POST':
@@ -70,9 +72,9 @@ def scan_qr(request, ticket_id):
     if not ticket.used:
         ticket.used = True
         ticket.save()
-        return render(request, 'success.html', {'participant': ticket.participant})
+        messages.success(request, f"{ticket.participant.name}'s QR code scanned successfully.")
     else:
-        return render(request, 'already_scanned.html')
+        messages.error(request, f'QR code already scanned, they aint {ticket.participant.name}.')
 
 def superuser_check(user):
     return user.is_superuser
@@ -91,5 +93,11 @@ def community_view(request):
 def login_view(request):
     return render(request, 'login.html')
 
+@login_required
 def dashboard_view(request):
     return render(request, 'dashboard.html')
+
+@login_required
+def user_list(request):
+    users = Participant.objects.all()
+    return render(request, 'user_list.html', {'users':users})

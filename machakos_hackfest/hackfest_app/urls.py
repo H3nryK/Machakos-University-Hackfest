@@ -8,5 +8,6 @@ urlpatterns = [
     path('scan/<int:ticket_id>/', scan_qr, name='scan_qr'),
     path('admin/login/', login_view, name='login'),
     path('admin/dashboard/', dashboard_view, name='dashboard'),
+    path('admin/users/', user_list, name='user_list'),
     path('community/', community_view, name='community'),
 ]
