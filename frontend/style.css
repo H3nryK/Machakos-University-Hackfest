@@ -51,3 +51,8 @@ animation: bounce 0.5s;
       max-height: 30px;
     }
 }
+
+.header .navbar-brand,
+.header .nav-link {
+  font-family: 'Montserrat', sans-serif;
+}
