@@ -253,3 +253,46 @@ animation: bounce 0.5s;
 .navbar-collapse.show {
   max-height: 500px; /* Adjust this value based on the height of your navbar */
 }
+
+/* Sponsors */
+.sponsors {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.sponsors h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sponsors .card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sponsors .card:hover {
+  transform: scale(1.05);
+}
+
+.sponsors .card-body {
+  padding: 20px;
+}
+
+.sponsors .card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.sponsors .card-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.sponsors .carousel-control-prev-icon,
+.sponsors .carousel-control-next-icon {
+  background-color: #333;
+  border-radius: 50%;
+  padding: 10px;
+}

@@ -171,28 +171,64 @@
       </div>
     </section>
 
-    <!-- Sponsor Section -->
-    <section class="sponsors py-5">
+    <!-- Sponsors Section -->
+    <section class="sponsors py-5" id="sponsors">
       <div class="container">
-        <h2 class="text-center mb-4">Our Sponsors</h2>
-        <div id="sponsorCarousel" class="carousel slide" data-ride="carousel">
+        <h2 class="text-center mb-4 animated fadeInUp">Our Sponsors</h2>
+        <div id="sponsorCarousel" class="carousel slide animated fadeInUp delay-1s" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="row">
                 <div class="col-md-4 mb-3">
-                  <div class="card">
-                    <img src="sponsor1.png" class="card-img-top" alt="Sponsor 1">
+                  <div class="card h-100 text-center">
+                    <img src="gdsc.png" class="card-img-top animated zoomIn delay-2s" alt="GDSC">
                     <div class="card-body">
-                      <h5 class="card-title">Sponsor 1</h5>
+                      <h5 class="card-title">GDSC</h5>
                       <p class="card-text">Description of Sponsor 1</p>
                     </div>
                   </div>
                 </div>
-                <!-- Add more sponsor cards here -->
+                <div class="col-md-4 mb-3">
+                  <div class="card h-100 text-center">
+                    <img src="ml.png" class="card-img-top animated zoomIn delay-3s" alt="Microsoft Learn">
+                    <div class="card-body">
+                      <h5 class="card-title">Microsoft Learn</h5>
+                      <p class="card-text">Description of Sponsor 2</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="card h-100 text-center">
+                    <img src="echo.png" class="card-img-top animated zoomIn delay-4s" alt="Echo 3D">
+                    <div class="card-body">
+                      <h5 class="card-title">Echo 3D</h5>
+                      <p class="card-text">Description of Sponsor 3</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="carousel-item">
-              <!-- Add more carousel items for additional sponsors -->
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <div class="card h-100 text-center">
+                    <img src="mksu.jpg" class="card-img-top animated zoomIn delay-2s" alt="Machakos University">
+                    <div class="card-body">
+                      <h5 class="card-title">Machakos University</h5>
+                      <p class="card-text">Description of Sponsor 4</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="card h-100 text-center">
+                    <img src="icp.jpg" class="card-img-top animated zoomIn delay-3s" alt="ICP Hub Kenya">
+                    <div class="card-body">
+                      <h5 class="card-title">ICP Hub Kenya</h5>
+                      <p class="card-text">Description of Sponsor 5</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <a class="carousel-control-prev" href="#sponsorCarousel" role="button" data-slide="prev">
@@ -206,6 +242,7 @@
         </div>
       </div>
     </section>
+  
 
     <!-- Testimonial Section -->
     <section class="testimonials py-5">
@@ -335,18 +372,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
   <!-- Internal JS -->
   <script>
-    $(document).ready(function() {
-      $('.testimonial-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        adaptiveHeight: true
-      });
+  $(document).ready(function() {
+    $('#sponsorCarousel').carousel({
+      interval: 3000
     });
+  });
   </script>
 </body>
 </html>
