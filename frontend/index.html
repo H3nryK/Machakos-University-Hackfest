@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MKSU Hackfest 2024</title>
 
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Join us for the MKSU Hackfest 2024, an epic coding adventure filled with challenges, workshops, and networking opportunities.">
+  <meta name="keywords" content="MKSU, Hackfest, 2024, coding, hackathon, workshops, tech talks">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +25,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container">
-        <a class="navbar-brand animated fadeInDown" href="#">
+        <a class="navbar-brand animated fadeInDown" href="https://mksu.ac.ke">
           <img src="mksu.png" alt="MKSU Hackfest Logo" class="img-fluid" style="max-height: 50px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item animated fadeInDown">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#hero">Home</a>
             </li>
             <li class="nav-item animated fadeInDown delay-1s">
               <a class="nav-link" href="#">About</a>
@@ -57,17 +61,19 @@
 
   <!-- Main Content -->
   <main>
+
     <!-- Hero Section -->
-    <section class="hero py-5" style="background-image: url('ADS_2157.jpg'); background-size: cover;">
-      <div class="container text-center">
-        <h1 class="display-4 text-white">MKSU Hackfest 2024</h1>
-        <p class="lead text-white mb-4">Join us for an epic coding adventure!</p>
-        <div class="animated infinite pulse delay-2s">
-          <i class="fas fa-code fa-3x"></i>
-        </div>
-        <a href="#" class="btn btn-primary btn-lg btn-bounce">Register Now</a>
+    <section class="hero py-5 d-flex align-items-center" id="hero" style="background-image: url('ADS_2157.jpg'); background-size: cover; background-position: center; position: relative;">
+      <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);"></div>
+      <div class="container text-center text-white position-relative">
+        <h1 class="display-4 mb-3">
+          <span class="typed"></span>
+        </h1>
+        <p class="lead mb-4">Join us for an epic coding adventure!</p>
+        <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
       </div>
     </section>
+
 
     <!-- Countdown Timer Section -->
     <section class="countdown py-5">
@@ -302,12 +308,17 @@
   <script src="countdown.js"></script>
   <script src="parallax.js"></script>
   <script src="Navbar.js"></script>
+  <script src="Typed.js"></script>
 
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/countdown-timer-js@1.0.0/dist/countdown-timer.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollorama/1.1.4/scrollorama.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Internal JS -->
   <script>
     $(document).ready(function() {
       $('.testimonial-slider').slick({

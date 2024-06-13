@@ -14,9 +14,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .hero {
-min-height: 100vh;
-display: flex;
-align-items: center;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.hero .btn-primary:hover {
+  background-color: #0056b3;
 }
 
 /* Countdown Timer */
@@ -104,4 +128,14 @@ animation: bounce 0.5s;
     padding: 0.4rem 0.5rem;
     text-align: center;
   }
+}
+
+.navbar-collapse {
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.navbar-collapse.show {
+  max-height: 500px; /* Adjust this value based on the height of your navbar */
 }
