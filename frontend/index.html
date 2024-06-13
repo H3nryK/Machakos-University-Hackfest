@@ -3,103 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MKSU Hackfest</title>
+  <title>MKSU Hackfest 2024</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <!-- Navbar -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand animated fadeInDown" href="#">
+          <img src="logo.png" alt="MKSU Hackfest Logo" class="img-fluid" style="max-height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item animated fadeInDown">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item animated fadeInDown delay-1s">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item animated fadeInDown delay-2s">
+              <a class="nav-link" href="#">Schedule</a>
+            </li>
+            <li class="nav-item animated fadeInDown delay-3s">
+              <a class="nav-link" href="#">Sponsors</a>
+            </li>
+            <li class="nav-item animated fadeInDown delay-4s">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!-- Main Content -->
   <main>
-    <!-- Sections for event details, schedule, sponsors, etc. -->
     <!-- Hero Section -->
     <section class="hero py-5" style="background-image: url('ADS_2157.jpg'); background-size: cover;">
-        <div class="container text-center">
-          <h1 class="display-4 text-white">MKSU Hackfest 2024</h1>
-          <p class="lead text-white mb-4">Join us for an epic coding adventure!</p>
-          <div class="animated infinite pulse delay-2s">
-            <i class="fas fa-code fa-3x"></i>
-          </div>
-          <a href="#" class="btn btn-primary btn-lg btn-bounce">Register Now</a>
+      <div class="container text-center">
+        <h1 class="display-4 text-white">MKSU Hackfest 2024</h1>
+        <p class="lead text-white mb-4">Join us for an epic coding adventure!</p>
+        <div class="animated infinite pulse delay-2s">
+          <i class="fas fa-code fa-3x"></i>
         </div>
+        <a href="#" class="btn btn-primary btn-lg btn-bounce">Register Now</a>
+      </div>
     </section>
 
-    <!-- Countdown timer section -->
+    <!-- Countdown Timer Section -->
     <section class="countdown py-5">
-        <div class="container">
+      <div class="container">
         <h2 class="text-center mb-4">Countdown to Hackfest</h2>
-        <div id="countdown" class="text-center"></div>
+        <div id="countdown" class="text-center animated infinite pulse"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">About MKSU Hackfest</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <p>MKSU Hackfest is an annual event that brings together talented developers, designers, and tech enthusiasts from around the world for a weekend of coding, collaboration, and creativity. Whether you're a seasoned pro or just starting out, this hackfest is the perfect place to unleash your skills, learn from others, and build something amazing.</p>
+          </div>
+          <div class="col-md-6">
+            <p>During the event, you'll have the opportunity to participate in challenges, attend workshops and talks, network with industry professionals, and showcase your projects to a panel of expert judges. With plenty of prizes and swag up for grabs, MKSU Hackfest is an unforgettable experience that you won't want to miss.</p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Schedule Section -->
     <section class="schedule py-5 bg-pattern">
-        <div class="container">
+      <div class="container">
         <h2 class="text-center mb-4">Event Schedule</h2>
-        <!-- Schedule content -->
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Day 1</h5>
+                <ul class="list-unstyled">
+                  <li>9:00 AM - Registration and Check-in</li>
+                  <li>10:00 AM - Opening Ceremony</li>
+                  <li>11:00 AM - Hackathon Kickoff</li>
+                  <li>1:00 PM - Lunch Break</li>
+                  <li>2:00 PM - Coding Workshops</li>
+                  <li>6:00 PM - Dinner Break</li>
+                  <li>7:00 PM - Coding Continues</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Day 2</h5>
+                <ul class="list-unstyled">
+                  <li>8:00 AM - Breakfast</li>
+                  <li>9:00 AM - Coding Continues</li>
+                  <li>12:00 PM - Lunch Break</li>
+                  <li>1:00 PM - Tech Talks</li>
+                  <li>3:00 PM - Project Submissions</li>
+                  <li>5:00 PM - Judging and Awards Ceremony</li>
+                  <li>7:00 PM - Closing Party</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Activities</h5>
+                <ul class="list-unstyled">
+                  <li>Coding Challenges</li>
+                  <li>Workshops and Tech Talks</li>
+                  <li>Mentoring Sessions</li>
+                  <li>Networking Opportunities</li>
+                  <li>Fun Games and Activities</li>
+                  <li>Food and Refreshments</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Sponsor Section -->
     <section class="sponsors py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Our Sponsors</h2>
-          <div id="sponsorCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <div class="col-md-4 mb-3">
-                    <div class="card">
-                      <img src="sponsor1.png" class="card-img-top" alt="Sponsor 1">
-                      <div class="card-body">
-                        <h5 class="card-title">Sponsor 1</h5>
-                        <p class="card-text">Description of Sponsor 1</p>
-                        <a href="#" class="btn btn-primary">Visit Website</a>
-                      </div>
+      <div class="container">
+        <h2 class="text-center mb-4">Our Sponsors</h2>
+        <div id="sponsorCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <img src="sponsor1.png" class="card-img-top" alt="Sponsor 1">
+                    <div class="card-body">
+                      <h5 class="card-title">Sponsor 1</h5>
+                      <p class="card-text">Description of Sponsor 1</p>
                     </div>
                   </div>
-                  <!-- Add more sponsor cards here -->
                 </div>
-              </div>
-              <div class="carousel-item">
-                <!-- Add more carousel items for additional sponsors -->
+                <!-- Add more sponsor cards here -->
               </div>
             </div>
-            <a class="carousel-control-prev" href="#sponsorCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#sponsorCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <div class="carousel-item">
+              <!-- Add more carousel items for additional sponsors -->
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#sponsorCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#sponsorCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">What People Say</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial-item">
+            <blockquote class="blockquote">
+              <p>"The MKSU Hackfest was an incredible experience! I learned so much and met amazing people who shared my passion for coding."</p>
+              <footer class="blockquote-footer">John Doe</footer>
+            </blockquote>
+          </div>
+          <div class="testimonial-item">
+            <blockquote class="blockquote">
+              <p>"The energy and atmosphere at the hackfest were truly inspiring. Can't wait for the next one!"</p>
+              <footer class="blockquote-footer">Jane Smith</footer>
+            </blockquote>
+          </div>
+          <!-- Add more testimonial items here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Who can participate in the MKSU Hackfest?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                The MKSU Hackfest is open to all students, professionals, and anyone with a passion for coding and technology. No experience is required, and we welcome participants of all skill levels.
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  What should I bring to the hackfest?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                You should bring your laptop, chargers, and any other essential hardware or software you might need for coding and development. We'll provide food, drinks, and a fun working environment!
+              </div>
+            </div>
+          </div>
+          <!-- Add more FAQ items here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Get in Touch</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <form>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Enter your message"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Contact Information</h5>
+                <p class="card-text"><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, State</p>
+                <p class="card-text"><i class="fas fa-phone"></i> (123) 456-7890</p>
+                <p class="card-text"><i class="fas fa-envelope"></i> info@mksuhackfest.com</p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <!-- Footer content -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 MKSU Hackfest. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-right">
+          <a href="#" class="text-white mr-3"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white mr-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Custom Js -->
-   <script src="countdown.js"></script>
-   <script src="parallax.js"></script>
+  <!-- Custom JS -->
+  <script src="countdown.js"></script>
+  <script src="parallax.js"></script>
 
   <!-- Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/countdown-timer-js@1.0.0/dist/countdown-timer.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollorama/1.1.4/scrollorama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.testimonial-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+    });
+  </script>
 </body>
 </html>
