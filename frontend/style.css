@@ -190,11 +190,6 @@ animation: bounce 0.5s;
 }
 
 /* header */
-.header .navbar-brand,
-.header .nav-link {
-  font-family: 'Handlee', cursive;
-  color: #7112cb;
-}
 
 .header .navbar {
   background-color: rgba(255, 192, 203, 0.8); /* Light pink color with 80% opacity */
@@ -206,6 +201,9 @@ animation: bounce 0.5s;
   position: relative;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
+  font-family: 'Handlee', cursive;
+  color: #7112cb;
+  z-index: 4;
 }
 
 .header .nav-link:hover {
@@ -295,4 +293,47 @@ animation: bounce 0.5s;
   background-color: #333;
   border-radius: 50%;
   padding: 10px;
+}
+
+.testimonials {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.testimonials h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.testimonial-item {
+  max-width: 800px;
+  margin: auto;
+}
+
+.testimonial-item blockquote {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  border-left: 5px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item blockquote::before {
+  content: "\201C";
+  font-size: 4em;
+  color: #007bff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  line-height: 0.1em;
+}
+
+.testimonial-item footer {
+  font-size: 1em;
+  color: #333;
+  font-weight: bold;
 }

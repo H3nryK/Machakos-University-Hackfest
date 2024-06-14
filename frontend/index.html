@@ -243,25 +243,45 @@
       </div>
     </section>
   
-
-    <!-- Testimonial Section -->
-    <section class="testimonials py-5">
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5" id="testimonials">
       <div class="container">
-        <h2 class="text-center mb-4">What People Say</h2>
-        <div class="testimonial-slider">
-          <div class="testimonial-item">
-            <blockquote class="blockquote">
-              <p>"The MKSU Hackfest was an incredible experience! I learned so much and met amazing people who shared my passion for coding."</p>
-              <footer class="blockquote-footer">John Doe</footer>
-            </blockquote>
+        <h2 class="text-center mb-4 animated fadeInUp">What People Say</h2>
+        <div id="testimonialCarousel" class="carousel slide animated fadeInUp delay-1s" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-item text-center">
+                <blockquote class="blockquote">
+                  <p class="mb-4">"The MKSU Hackfest was an incredible experience! I learned so much and met amazing people who shared my passion for coding."</p>
+                  <footer class="blockquote-footer">John Doe</footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
+                <blockquote class="blockquote">
+                  <p class="mb-4">"The energy and atmosphere at the hackfest were truly inspiring. Can't wait for the next one!"</p>
+                  <footer class="blockquote-footer">Jane Smith</footer>
+                </blockquote>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-item text-center">
+                <blockquote class="blockquote">
+                  <p class="mb-4">"An unforgettable weekend of coding, learning, and networking. Highly recommend MKSU Hackfest!"</p>
+                  <footer class="blockquote-footer">Alice Johnson</footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
-          <div class="testimonial-item">
-            <blockquote class="blockquote">
-              <p>"The energy and atmosphere at the hackfest were truly inspiring. Can't wait for the next one!"</p>
-              <footer class="blockquote-footer">Jane Smith</footer>
-            </blockquote>
-          </div>
-          <!-- Add more testimonial items here -->
+          <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </section>
@@ -375,5 +395,14 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+  <!-- Inline JS -->
+   <script>
+      $(document).ready(function() {
+        $('#testimonialCarousel').carousel({
+          interval: 5000
+        });
+      });
+   </script>
 </body>
 </html>
