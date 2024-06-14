@@ -253,6 +253,7 @@ animation: bounce 0.5s;
 }
 
 /* Sponsors */
+
 .sponsors {
   background-color: #fff;
   padding: 60px 0;
@@ -295,6 +296,8 @@ animation: bounce 0.5s;
   padding: 10px;
 }
 
+/* Testimonials */
+
 .testimonials {
   background-color: #f8f9fa;
   padding: 60px 0;
@@ -336,4 +339,122 @@ animation: bounce 0.5s;
   font-size: 1em;
   color: #333;
   font-weight: bold;
+}
+
+/* FAQs */
+
+.faq {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.faq h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.faq .card-header {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.faq .card-header h2 {
+  font-size: 1.25em;
+}
+
+.faq .card-body {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Contact */
+
+.contact {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.contact h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact .form-group label {
+  font-weight: bold;
+}
+
+.contact .form-control {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.contact .btn {
+  border-radius: 0;
+  background-color: #007bff;
+  border: none;
+}
+
+.contact .btn:hover {
+  background-color: #0056b3;
+}
+
+.contact .card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 40px 0;
+}
+
+footer h5 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+footer p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+footer ul li {
+  padding: 5px 0;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #007bff;
+}
+
+footer .fab {
+  font-size: 1.5em;
+}
+
+footer .fab:hover {
+  color: #007bff;
 }
