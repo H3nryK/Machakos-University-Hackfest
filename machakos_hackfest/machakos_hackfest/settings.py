@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hackfest_app',
-    'crispy_forms',
     'whitenoise.runserver_nostatic',
 ]
 
